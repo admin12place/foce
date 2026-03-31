@@ -18,6 +18,26 @@ footer::after {
     transform-origin: center center; /* pivot au centre */
 }
 
+h2#story::after {
+    width: 155px;
+    height: 155px;
+}
+
+#studio h2::before {
+    width: 203px;
+    height: 203px;
+}
+
+#studio h2::after {
+    width: 109px;
+    height: 109px;
+}
+
+footer::after {
+    width: 171px;
+    height: 171px;
+}
+
 @keyframes rotation {
     from {
         transform: rotate(0deg);
