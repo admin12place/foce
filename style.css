@@ -8,3 +8,21 @@
  Version: 0.1
  */
  
+ article.story__article::after,
+h2#story::after,
+#studio h2::after,
+#studio h2::before,
+footer::before,
+footer::after {
+    animation: rotation 6s linear infinite;
+    transform-origin: center center; /* pivot au centre */
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
