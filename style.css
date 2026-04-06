@@ -4,24 +4,25 @@
  Author: Studio Koukaki
  Author URI: https://www.koukaki.local
  Template: foce
- Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Description: Thème enfant à l'occasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
 
-
 /*******************ANIMATION DES FLEURS*****************/
 article.story__article::after,
-h2#story::after,
+.story h2::after,
 #studio h2::after,
 #studio h2::before,
 footer::before,
-footer::after {
-    animation: rotation 6s linear infinite;
+footer::after,
+#oscar::before,
+#oscar::after {
+    animation: rotation 20s linear infinite;
     transform-origin: center center; /*centré*/
 }
 
 /*Centrage pour une rotation des fleurs harmonieuse*/
-h2#story::after {
+.story h2::after {
     width: 155px;
     height: 155px;
 }
@@ -87,4 +88,65 @@ footer::after {
 }
 /********FIN ANIMATION AU CHARGEMENT DE LA PAGE********/
 
+/****************SECTION DES OSCARS********************/
+
+#oscar {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    padding-top: 120px;
+    height: 30em;
+}
+
+#oscar .left {
+    width: 65%;
+    max-width: 800px;
+    background-image: url('assets/cloud_orange.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 4%;
+}
+
+#oscar .right {
+    background-image: url('assets/oscar-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20%;
+    margin-top: 45px;
+    margin-right: 3%;
+}
+
+.orange-cloud {
+    padding: 20px 25px 0 60px;
+    margin-bottom: 0;
+    color:white;
+    font: 700 3vw "Quicksand";
+    line-height: 100%;
+    letter-spacing: -2%;
+}
+
+.site-footer::before,
+.site-footer::after {
+    display: none;
+
+}
+
+#oscar::before {
+    content : url("assets/Sunflower.png");
+    position: relative;
+    width: 171px;
+    height: 171px;
+    left: 8em;
+    top: -5em;
+}
+
+#oscar::after {
+    content : url("assets/orchid.png");
+    position: relative;
+    width: 168px;
+    height: 168px;
+    left: 4em;
+    top: -12em;
+}
 

@@ -38,6 +38,7 @@
                 <li class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
                 <li><a href="#place">Lieu</a></li>
                 <li><a href="#studio">Studio Koukaki</a></li>
+                <!--<li><a href="#oscar">Les Oscars</a></li>-->
             </ul>
 
 		</nav><!-- #site-navigation -->
