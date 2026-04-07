@@ -55,11 +55,31 @@ footer::after {
 
 /***********ANIMATION AU CHARGEMENT DE LA PAGE***********/
 #primary, p {
-    display: inline-block;
-    animation: decalage-bas 1s ease-out;
+    opacity: 0;
+    animation: decalage-bas 1s ease-out,
+    pageDelayed 1s ease-out forwards;
+    animation-delay: 0.5s;
 }
 
-@keyframes decalage-bas {
+.banner img,
+.story,
+#studio {
+    animation: decalage-haut 1s ease-out;
+    animation-delay: 0.5s;
+}
+
+@keyframes decalage-haut {/*décale les éléments vers le haut*/
+    from {
+        transform: translateY(+180px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes decalage-bas {/*décale les éléments vers le bas*/
     from {
         transform: translateY(-90px); 
         opacity: 0;          
@@ -70,22 +90,15 @@ footer::after {
     }
 }
 
-.banner img,
-.story,
-#studio p {
-    animation: decalage-haut 1s ease-out;
-}
-
-@keyframes decalage-haut {
+@keyframes pageDelayed {/*retarde l'apparition de la page*/
     from {
-        transform: translateY(+180px);
         opacity: 0;
     }
     to {
-        transform: translateY(0);
         opacity: 1;
     }
 }
+
 /********FIN ANIMATION AU CHARGEMENT DE LA PAGE********/
 
 /****************SECTION DES OSCARS********************/
@@ -121,7 +134,7 @@ footer::after {
     padding: 20px 25px 0 60px;
     margin-bottom: 0;
     color:white;
-    font: 700 3vw "Quicksand";
+    font: 700 clamp(16px, 3vw, 42px) "Quicksand";
     line-height: 100%;
     letter-spacing: -2%;
 }
