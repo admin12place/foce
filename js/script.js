@@ -1,8 +1,5 @@
-document.querySelectorAll(".anchor-link").forEach(link => {
-    link.addEventListener('click', () => {
-        preventDefault();
-        location.reload();      // recharge la page
-        
-    });
+document.querySelectorAll('.anchor-link').forEach(link => {
+  link.addEventListener('click', () => {
+    window.location.reload();
+  });
 });
-console.log("oui");

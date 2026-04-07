@@ -4,6 +4,12 @@ function theme_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 }
 
+function child_enqueue_scripts() {// Charger le script.js du thème enfant
+    wp_enqueue_script('child-script', get_stylesheet_directory_uri() . '/js/script.js', array('jquery'), filemtime(get_stylesheet_directory() . '/js/script.js'), true
+    );
+}
+add_action('wp_enqueue_scripts', 'child_enqueue_scripts');
+
 // Get customizer options form parent theme
 if ( get_stylesheet() !== get_template() ) {
     add_filter( 'pre_update_option_theme_mods_' . get_stylesheet(), function ( $value, $old_value ) {
