@@ -5,7 +5,12 @@ get_header();
 
     <main id="primary" class="site-main">
         <section class="banner">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+            <video class="video-banner" autoplay muted loop playsinline disablepictureinpicture preload="auto">
+                <source src="http://koukaki.local/wp-content/uploads/2026/03/StudioKoukaki-videoheadersansson1.mp4" type="video/mp4">
+            </video>
+            <div class="logo-foce">
+                <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants"/>
+</          </div>
         </section>
 
         <section id="story" class="story">

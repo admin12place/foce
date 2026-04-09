@@ -195,7 +195,45 @@ footer::after {
 
 /********************FIN DE SECTION DES OSCARS*****************/
 
+/***********************ANIMATION BANNER***********************/
 
+.logo-foce {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: absolute;
+    animation: float-cloud 5s ease-in-out infinite alternate;
+}
 
+@keyframes float-cloud {
+    0% {
+        transform: translate(0, 0);
+    }
+    15% {
+        transform: translate(-2px, -6px)
+    }
+    25% {
+        transform: translate(-5px, -9px)
+    }
+    50% {
+        transform: translate(-8px, -15px);
+    }
+    75% {
+        transform: translate(3px, -6px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
 
+video.video-banner {
+    height: auto;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    min-height: 806px;
+}
 
