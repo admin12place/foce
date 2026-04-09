@@ -8,6 +8,47 @@
  Version: 0.1
  */
 
+#story,
+#characters,
+#place {
+    padding-top: 6em;
+}
+
+#studio,
+#studio div::before {
+    padding-top: 6em;
+}
+
+#studio h2::before,
+#studio h2::after {
+    position: absolute;
+    top: 1.5em;
+}
+
+.story #place {
+    background-image: url("assets/koukaki-place.png");
+}
+
+.story #place::before {
+    content: url("assets/clouds.png");
+    position: absolute;
+    left: 52%;
+    animation: left-translate 3s ease forwards;
+    animation-delay: 1s;
+}
+
+/*******************ANIMATION DES NUAGES*****************/
+
+@keyframes left-translate {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+/*****************FIN ANIMATION DES NUAGES***************/
+
 /*******************ANIMATION DES FLEURS*****************/
 article.story__article::after,
 .story h2::after,
@@ -15,6 +56,7 @@ article.story__article::after,
 #studio h2::before,
 footer::before,
 footer::after,
+.site-footer ul::after,
 #oscar::before,
 #oscar::after {
     animation: rotation 20s linear infinite;
@@ -55,31 +97,17 @@ footer::after {
 
 /***********ANIMATION AU CHARGEMENT DE LA PAGE***********/
 #primary, p {
-    opacity: 0;
-    animation: decalage-bas 1s ease-out,
-    pageDelayed 1s ease-in forwards;
-    animation-delay: 0.5s;
+    display: inline-block;
+    animation: decalage-bas 1s ease-out;
 }
 
 .banner img,
 .story,
-#studio {
+#studio p {
     animation: decalage-haut 1s ease-out;
-    animation-delay: 0.5s;
 }
 
-@keyframes decalage-haut {/*décale les éléments vers le haut*/
-    from {
-        transform: translateY(+180px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes decalage-bas {/*décale les éléments vers le bas*/
+@keyframes decalage-bas {
     from {
         transform: translateY(-90px); 
         opacity: 0;          
@@ -90,11 +118,13 @@ footer::after {
     }
 }
 
-@keyframes pageDelayed {/*retarde l'apparition de la page*/
+@keyframes decalage-haut {
     from {
+        transform: translateY(+180px);
         opacity: 0;
     }
     to {
+        transform: translateY(0);
         opacity: 1;
     }
 }
@@ -164,5 +194,8 @@ footer::after {
 }
 
 /********************FIN DE SECTION DES OSCARS*****************/
+
+
+
 
 
