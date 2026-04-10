@@ -14,7 +14,7 @@ get_header();
         </section>
 
         <section id="story" class="story">
-            <h2 id="#story">L'histoire</h2><!--***id="story"***-->
+            <h2 id="#story"><span class="uptitle">L'histoire</span></h2><!--***id="story"***-->
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>
@@ -30,7 +30,7 @@ get_header();
             ?>
             <article id="characters">
                 <div class="main-character">
-                    <h3>Les personnages</h3>
+                    <h3 class="multi"><span class="uptitle">Les</span><span class="uptitle">personnages</span></h3>
                     <?php
                     $main_character = $characters_query->posts[0];
                     echo '<figure>';
@@ -56,7 +56,7 @@ get_header();
             </article>
             <article id="place">
                 <div>
-                    <h3>Le Lieu</h3>
+                    <h3 class="multi"><span class="uptitle">Le</span><span class="uptitle">Lieu</span></h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
                 </div>
 
@@ -65,7 +65,7 @@ get_header();
 
 
         <section id="studio">
-            <h2>Studio Koukaki</h2>
+            <h2 class="multi"><span class="uptitle">Studio</span><span class="uptitle"> Koukaki</span></h2>
             <div>
                 <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>
                 <p>Avec une créativité et une capacité d’innovation mondialement reconnues, une expertise éditoriale et commerciale à la pointe de son industrie, le Studio Koukaki se positionne comme un acteur incontournable dans un marché en forte croissance. Koukaki construit chaque année de véritables succès et capitalise sur de puissantes marques historiques. Cette année, il vous présente “Fleurs d’oranger et chats errants”.</p>
