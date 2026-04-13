@@ -7,7 +7,7 @@
  Description: Thème enfant à l'occasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
-
+ 
 #story,
 #characters,
 #place {
@@ -29,25 +29,12 @@
     background-image: url("assets/koukaki-place.png");
 }
 
-.story #place::before {
-    content: url("assets/clouds.png");
+.story #place img.clouds{
     position: absolute;
     left: 52%;
-    animation: left-translate 3s ease forwards;
-    animation-delay: 1s;
+    bottom: 15%;
+    transform: translateX(0);
 }
-
-/*******************ANIMATION DES NUAGES*****************/
-
-@keyframes left-translate {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
-}
-/*****************FIN ANIMATION DES NUAGES***************/
 
 /*******************ANIMATION DES FLEURS*****************/
 article.story__article::after,
@@ -235,6 +222,7 @@ video.video-banner {
     z-index: 2;
     position: absolute;
     animation: float-cloud 5s ease-in-out infinite alternate;
+    transform: translate(0);
 }
 
 /********************FIN ANIMATION BANNER*********************/
@@ -275,3 +263,17 @@ h2 span.uptitle.apparition, h3 span.uptitle.apparition {
     }
 }
 /********************FIN ANIMATION TITRES*********************/
+
+/*MEDIA QUERIES*/
+@media (max-width: 900px) {
+    video.video-banner {
+        display: none;
+    }
+
+    .banner {
+        min-height: 400px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}

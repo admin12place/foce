@@ -58,6 +58,7 @@ get_header();
                 <div>
                     <h3 class="multi"><span class="uptitle">Le</span><span class="uptitle">Lieu</span></h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
+                    <img class="clouds" src="<?php echo get_theme_file_uri() . '/assets/clouds.png'; ?>" alt="big cloud">
                 </div>
 
             </article>
