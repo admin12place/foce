@@ -1,0 +1,272 @@
+#story,
+#characters,
+#place {
+    padding-top: 6em;
+}
+
+#studio,
+#studio div::before {
+    padding-top: 6em;
+}
+
+#studio h2::before,
+#studio h2::after {
+    position: absolute;
+    top: 1.5em;
+}
+
+.story #place {
+    background-image: url("../assets/koukaki-place.png");
+}
+
+.story #place img.clouds{
+    position: absolute;
+    left: 52%;
+    bottom: 15%;
+    transform: translateX(0);
+}
+
+/*******************ANIMATION DES FLEURS*****************/
+article.story__article::after,
+.story h2::after,
+#studio h2::after,
+#studio h2::before,
+footer::before,
+footer::after,
+.site-footer ul::after,
+#oscar::before,
+#oscar::after {
+    animation: rotation 20s linear infinite;
+    transform-origin: center center; /*centré*/
+}
+
+/*Centrage pour une rotation des fleurs harmonieuse*/
+.story h2::after {
+    width: 155px;
+    height: 155px;
+}
+
+#studio h2::before {
+    width: 203px;
+    height: 203px;
+}
+
+#studio h2::after {
+    width: 109px;
+    height: 109px;
+}
+
+footer::after {
+    width: 171px;
+    height: 171px;
+}
+/**************************************************/
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+/*****************FIN ANIMATION DES FLEURS***************/
+
+/***********ANIMATION AU CHARGEMENT DE LA PAGE***********/
+#primary, p {
+    display: inline-block;
+    animation: decalage-bas 1s ease-out;
+}
+
+.banner img,
+.story,
+#studio p {
+    animation: decalage-haut 1s ease-out;
+}
+
+@keyframes decalage-bas {
+    from {
+        transform: translateY(-90px); 
+        opacity: 0;          
+    }
+    to {
+        transform: translateY(0);    
+        opacity: 1;
+    }
+}
+
+@keyframes decalage-haut {
+    from {
+        transform: translateY(+180px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/********FIN ANIMATION AU CHARGEMENT DE LA PAGE********/
+
+/****************SECTION DES OSCARS********************/
+
+#oscar {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    padding-top: 120px;
+    height: 30em;
+}
+
+#oscar .left {
+    width: 65%;
+    max-width: 800px;
+    background-image: url('../assets/cloud_orange.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 4%;
+}
+
+#oscar .right {
+    background-image: url('../assets/oscar-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20%;
+    margin-top: 45px;
+    margin-right: 3%;
+}
+
+.orange-cloud {
+    padding: 20px 25px 0 60px;
+    margin-bottom: 0;
+    color:white;
+    font: 700 clamp(16px, 3vw, 42px) "Quicksand";
+    line-height: 100%;
+    letter-spacing: -2%;
+}
+
+.site-footer::before,
+.site-footer::after {
+    display: none;
+
+}
+
+#oscar::before {
+    content : url("../assets/Sunflower.png");
+    position: relative;
+    width: 171px;
+    height: 171px;
+    left: 8em;
+    top: -5em;
+}
+
+#oscar::after {
+    content : url("../assets/orchid.png");
+    position: relative;
+    width: 168px;
+    height: 168px;
+    left: 4em;
+    top: -12em;
+}
+
+/********************FIN DE SECTION DES OSCARS*****************/
+
+/***********************ANIMATION BANNER***********************/
+
+@keyframes float-cloud {
+    0% {
+        transform: translate(0, 0);
+    }
+    15% {
+        transform: translate(-2px, -6px)
+    }
+    25% {
+        transform: translate(-5px, -9px)
+    }
+    50% {
+        transform: translate(-12px, -15px);
+    }
+    75% {
+        transform: translate(3px, -6px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+video.video-banner {
+    height: auto;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    z-index: 1;
+}
+
+.logo-foce {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: absolute;
+    animation: float-cloud 5s ease-in-out infinite alternate;
+    transform: translate(0);
+}
+
+/********************FIN ANIMATION BANNER*********************/
+
+/**********************ANIMATION TITRES***********************/
+
+.multi {
+    display: flex;
+    white-space: inherit;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+h2 span.uptitle, h3 span.uptitle {
+    display: block;
+    transform: translateY(1.5em);
+    opacity: 0;
+}
+
+.multi span.uptitle.apparition:last-child {
+    animation: appear-title 1.2s ease-in-out;
+}
+
+h2 span.uptitle.apparition, h3 span.uptitle.apparition {
+    animation: appear-title 1s ease-in-out;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes appear-title {
+    from {
+        transform: translateY(1.5em);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/********************FIN ANIMATION TITRES*********************/
+
+/*************************************************************/
+/************************MEDIA QUERIES************************/
+/*************************************************************/
+
+@media (max-width: 900px) {
+    video.video-banner {
+        display: none;
+    }
+
+    .banner {
+        min-height: 400px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
