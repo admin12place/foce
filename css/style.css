@@ -26,6 +26,12 @@
     transform: translateX(0);
 }
 
+h3.multi {
+    background-position: left;
+    justify-content: left;
+    padding-left: 0.8em;
+}
+
 /*******************ANIMATION DES FLEURS*****************/
 article.story__article::after,
 .story h2::after,
@@ -122,6 +128,7 @@ footer::after {
 #oscar .left {
     width: 65%;
     max-width: 800px;
+    min-width: 500px;
     background-image: url('../assets/cloud_orange.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -129,10 +136,9 @@ footer::after {
 }
 
 #oscar .right {
-    background-image: url('../assets/oscar-logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
     width: 20%;
+    min-width: 200px;
+    /*height: inherit;*/
     margin-top: 45px;
     margin-right: 3%;
 }
@@ -296,5 +302,32 @@ h2 span.uptitle.apparition, h3 span.uptitle.apparition {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+    }
+
+    #oscar {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0;
+        justify-content: center;
+    }
+
+    #oscar::before,
+    #oscar::after {
+        display: none;
+    }
+
+    #oscar .right {
+        width: 200px;
+        aspect-ratio: inherit;
+        margin: 0;
+    }
+
+    #oscar .left {
+        background-size: cover;
+        margin: 0;
+        width: 70%;
+        aspect-ratio:2 / 0.7;
+        text-align: center;
+        padding: 2em 3em;
     }
 }

@@ -1,15 +1,15 @@
 <?php
-            $args = array(
-                'post_type' => 'characters',
-                'posts_per_page' => -1,
-                'meta_key'  => '_main_char_field',
-                'orderby'   => 'meta_value_num',
+    $args = array(
+        'post_type' => 'characters',
+        'posts_per_page' => -1,
+        'meta_key'  => '_main_char_field',
+        'orderby'   => 'meta_value_num',
+    );
+    $characters_query = new WP_Query($args);
+?>
 
-            );
-            $characters_query = new WP_Query($args);
-            ?>
 <article id="characters">
-<h3 class="multi"><span class="uptitle">Les</span><span class="uptitle">personnages</span></h3>
+    <h3 class="multi"><span class="uptitle">Les</span><span class="uptitle">personnages</span></h3>
                 
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
