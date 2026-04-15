@@ -254,6 +254,34 @@ h2 span.uptitle.apparition, h3 span.uptitle.apparition {
 }
 /********************FIN ANIMATION TITRES*********************/
 
+.story #characters {
+    display: block;
+    margin: 0;
+    padding: 1em 0 3em 0;
+}
+
+.swiper {
+    overflow: visible;
+}
+
+.mySwiper {
+    width:800px;
+    /*padding: 0px 0;*/
+    overflow: visible;
+}
+
+.swiper-slide {
+    width: 280px;   /* OBLIGATOIRE avec auto */
+    height: 200px;
+    margin: 0;
+}
+
+.swiper-slide img {
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+}
+
 /*************************************************************/
 /************************MEDIA QUERIES************************/
 /*************************************************************/

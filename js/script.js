@@ -53,4 +53,26 @@ window.addEventListener('scroll', () => {
     }
 });
 
+const swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: "2",
+    grabCursor: true,
+    speed: 1200,
+
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+    },
+
+    coverflowEffect: {
+    rotate: -40,
+    stretch: 60,
+    depth: 150,
+    scale: 0.85,
+    slideShadows: false
+    }
+});
+
 
