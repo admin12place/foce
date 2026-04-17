@@ -53,6 +53,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
+//Paramétrage du swiper.js
 const swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     loop: true,
@@ -75,4 +76,19 @@ const swiper = new Swiper(".mySwiper", {
     }
 });
 
+//Header et menu burger
+const burger = document.querySelector('.menu-toggle');
+const sitenav = document.getElementById('site-navigation');
+const mainbanner = document.querySelector('.banner');
+const fullbanner = document.querySelector('.banner-menu');
 
+burger.addEventListener('click', function () {
+    burger.classList.toggle('active');
+    sitenav.classList.toggle('toggled');
+
+    document.body.classList.toggle('no-scroll');
+
+    fullbanner.classList.toggle('locked');
+    mainbanner.classList.toggle('locked');
+    
+});

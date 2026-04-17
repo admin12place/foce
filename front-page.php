@@ -1,16 +1,44 @@
 <?php
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Fleurs_d\'oranger_&_Chats_errants
+ */
 
-get_header();
 ?>
+<!doctype html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	
+	<?php wp_head(); ?>
+</head>
+
+<body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
+    <div id="page" class="site">
+    
+    <header id="masthead" class="site-header">
+        <?php
+        get_template_part('template-parts/header-burger');
+        ?>
+    </header>
 
     <main id="primary" class="site-main">
+    
         <section class="banner">
             <video class="video-banner" autoplay muted loop playsinline disablepictureinpicture preload="auto">
                 <source src="http://koukaki.local/wp-content/uploads/2026/03/StudioKoukaki-videoheadersansson1.mp4" type="video/mp4">
             </video>
             <div class="logo-foce">
                 <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants"/>
-</          </div>
+            </div>
         </section>
 
         <section id="story" class="story">
