@@ -1,3 +1,9 @@
+
+main {
+    position: relative;
+    overflow: hidden;
+}
+
 #story,
 #characters,
 #place {
@@ -7,6 +13,7 @@
 #studio,
 #studio div::before {
     padding-top: 6em;
+    overflow: hidden;
 }
 
 #studio h2::before,
@@ -17,12 +24,16 @@
 
 .story #place {
     background-image: url("../assets/koukaki-place.png");
+    width: clamp(393px, 100vw, 1440px);
+    min-height: 400px;
+    aspect-ratio: 1440 / 699;
 }
 
 .story #place img.clouds{
     position: absolute;
-    left: 52%;
-    bottom: 15%;
+    left: 50vw;
+    bottom: 20vw;
+    width: clamp(310px, 49.3vw, 620px);
     transform: translateX(0);
 }
 
@@ -32,8 +43,11 @@ h3.multi {
     padding-left: 0.8em;
 }
 
-.banner {
-    width: 100%;
+.banner,
+.video-banner {
+    width: clamp(393px, 100vw, 1440px);
+    min-height: 0px;
+    aspect-ratio: 2880 / 1612;
 }
 
 /*******************ANIMATION DES FLEURS*****************/
@@ -78,6 +92,24 @@ footer::after {
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes altern-pivot {
+    0% {
+        transform: rotate(-30deg);
+    }
+    25% {
+        transform: rotate(30deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
+    75% {
+        transform: rotate(35deg);
+    }
+    100% {
+        transform: rotate(-30deg);
     }
 }
 /*****************FIN ANIMATION DES FLEURS***************/
@@ -268,7 +300,6 @@ h2 span.uptitle.apparition, h3 span.uptitle.apparition {
 .story #characters {
     display: block;
     margin: 0;
-    padding: 1em 0 3em 0;
 }
 
 .swiper {
@@ -295,7 +326,7 @@ h2 span.uptitle.apparition, h3 span.uptitle.apparition {
 /************************FIN DU SWIPER************************/
 
 /*************************MENU BURGER*************************/
-.main-navigation button {
+#site-navigation button {
     margin: 0 20px 0 0;
 }
 
@@ -353,7 +384,6 @@ h2 span.uptitle.apparition, h3 span.uptitle.apparition {
     background-image: none;
     background-color: #ffd5a2;
     overflow: hidden;
-    
     transform: translateY(0%);
     transition: transform 0.85s cubic-bezier(.77,0,.18,1);
 }
@@ -449,10 +479,18 @@ a[href="#characters"]::after {
 }
 
 a[href="#place"]::before {
-
+    background-image: url("../assets/black_cat.png");
+    width: 155px;
+    height: 148px;
+    left: 8em;
+    top: -0.5em;
 }
 a[href="#place"]::after {
-    
+    background-image: url("../assets/purple_cat.png");
+    width: 135px;
+    height: 128px;
+    right: 8em;
+    bottom: 4.5em;
 }
 
 a[href="#studio"]::before {
@@ -461,24 +499,38 @@ a[href="#studio"]::before {
     height: 500px;
     left: 12.6em;
     top: -0.2em;
-
+    
 }
 a[href="#studio"]::after {
-    
+    background-image: url("../assets/yellow_cat.png");
+    width: 107px;
+    height: 97px;
+    right: 13em;
+    top: 2em;
 }
 
 /*Tu me fais tourner la fleur?*/
 a[href="#story"]::before, a[href="#story"]::after,
 a[href="#characters"]::before, a[href="#characters"]::after,
-a[href="#place"]::before, a[href="#place"]::after,
-a[href="#studio"]::before, a[href="#studio"]::after {
+a[href="#studio"]::before {
     content: "";
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
+    pointer-events: none;/*pas de lien clickable*/
     animation: rotation 20s linear infinite;
     transform-origin: center center; /*centré*/
+}
+
+/*Tremblez chatons!*/
+a[href="#place"]::before, a[href="#place"]::after,
+a[href="#studio"]::after {
+    content: "";
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
     pointer-events: none;
+    animation: altern-pivot 2s ease-in-out infinite;
 }
 
 /*************************************************************/
@@ -489,15 +541,9 @@ a[href="#studio"]::before, a[href="#studio"]::after {
     #primary {
         display: block;
     }
+
     video.video-banner {
         display: none;
-    }
-
-    .banner {
-        min-height: 400px;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
     }
 
     #oscar {
@@ -534,26 +580,19 @@ a[href="#studio"]::before, a[href="#studio"]::after {
     }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 700px) {
+    p {
+        font-size: 0.8em;
+    }
     .logo-foce {
         animation: none;
         transform: none;
     }
-
-    .story #place {
-        min-height: 450px;
-    }
-
     .story #place img.clouds {
-        width: 55%;
-        min-width: 200px;
-        bottom: 12%;
+        bottom: 200px;
     }
-}
-
-@media screen and (max-width: 100%) {
-    #site-navigation .menu-toggle {
-        display: inline;
-        position: absolute;
+    #site-navigation {
+        justify-content: center;
+        height: 80px;
     }
 }

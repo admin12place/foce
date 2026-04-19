@@ -19,7 +19,7 @@ function theme_enqueue_assets() {
     //le css du theme enfant
     wp_enqueue_style('child-css', get_stylesheet_directory_uri() . '/css/style.css',
     filemtime(get_stylesheet_directory() . '/css/style.css'));
-
+    
     //le css de swiper
     wp_enqueue_style('swiper-css', get_stylesheet_directory_uri() .'/css/swiper-bundle.min.css',
     array(), null);

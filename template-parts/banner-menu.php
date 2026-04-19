@@ -6,6 +6,6 @@
     <li><a class="anchor-link" href="#characters">Personnages</a></li>
     <li><a class="anchor-link" href="#place">Lieu</a></li>
     <li><a class="anchor-link" href="#studio">Studio Koukaki</a></li>
-    <div class="banner-footer"><a href="#">STUDIO KOUKAKI</a></div>
+    <div class="banner-footer"><a href=""<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"">STUDIO KOUKAKI</a></div>
 </ul>
 
