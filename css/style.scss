@@ -88,6 +88,7 @@ $black-black: #000000;
         opacity: 1;
     }
 }
+/*************Fin de déclaration des keyframes***********/
 
 main {
     position: relative;
@@ -101,6 +102,7 @@ main {
 }
 
 #studio {
+    margin-top: 5em;
     div::before {
         padding-top: 6em;
         overflow: hidden;
@@ -173,12 +175,6 @@ footer::after,
     }
 }
 
-footer::after {
-    width: 171px;
-    height: 171px;
-}
-/**************************************************/
-
 /*****************FIN ANIMATION DES FLEURS***************/
 
 /***********ANIMATION AU CHARGEMENT DE LA PAGE***********/
@@ -211,7 +207,7 @@ footer::after {
         background-image: url('../assets/cloud_orange.png');
         background-size: contain;
         background-repeat: no-repeat;
-        margin-left: 4%;
+        margin-left: 5%;
     }
     .right {
         width: 20%;
@@ -224,7 +220,7 @@ footer::after {
         position: relative;
         width: 171px;
         height: 171px;
-        left: 8em;
+        left: 7em;
         top: -5em;
     }
     &::after {
@@ -238,12 +234,13 @@ footer::after {
 }
 
 .orange-cloud {//mise en forme et position du nuage des Oscars
-    padding: 20px 25px 0 60px;
+    padding: 1.4vw 0 0 4vw;
     margin-bottom: 0;
     color: $white-white;
-    font: 700 clamp(16px, 3vw, 42px) "Quicksand";
+    font: 700 clamp(23px, 2.8vw, 42px) "Quicksand";
     line-height: 100%;
     letter-spacing: -2%;
+    white-space: nowrap;
 }
 
 .site-footer::before,//suppression des fleurs du footer
@@ -440,7 +437,7 @@ a.anchor-link:hover {/*Au survol*/
 
 .banner-footer {/*position du texte en bas de la banner*/
     text-align: center;
-    margin-top: 11vh;
+    margin-top: 10vh;
     a {/*Mise en forme du lien*/
         text-decoration: none;
         font-size: 15px;
@@ -605,11 +602,39 @@ a[href="#studio"]::after {
         justify-content: center;
         height: 80px;
     }
+    #story,
+    #characters {
+        padding-top: 2vw;
+    }
 }
 
 @media (max-width: 500px) {
     .banner-menu li a.anchor-link {
         font-size: clamp(15px, 4em, 45px);
+    }
+    #oscar {
+        height: auto;
+        .left {
+            width: 90%;
+            min-width: 200px;
+            text-align: center;
+            
+            p.orange-cloud {
+                font-size: clamp(10px, 2em, 20px);
+                padding: 0;
+                margin-top: 1.5vw;
+        }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    #oscar {
+        .left {
+            p.orange-cloud {
+                font-size: 4vw;
+            }
+        }
     }
 }
 

@@ -24,10 +24,11 @@ const bannerLogo = document.querySelector('.logo-foce img');
 
 document.addEventListener('scroll', () => {
     const bannerDim = banner.offsetHeight;//hauteur de la bannière
+    const bannerMerge = (bannerDim - bannerLogo.height) / 1.33;
     const vertScroll = window.scrollY;
 
     const progress = Math.min(vertScroll / bannerDim, 1);
-    const moveY = Math.min(progress * (bannerDim / 2), 230);
+    const moveY = Math.min(progress * (bannerDim / 2), bannerMerge);
 
     bannerLogo.style.transform = `translateY(${moveY}px)`;
 });

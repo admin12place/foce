@@ -76,6 +76,7 @@
     opacity: 1;
   }
 }
+/*************Fin de déclaration des keyframes***********/
 main {
   position: relative;
   overflow: hidden;
@@ -87,6 +88,9 @@ main {
   padding-top: 6em;
 }
 
+#studio {
+  margin-top: 5em;
+}
 #studio div::before {
   padding-top: 6em;
   overflow: hidden;
@@ -152,12 +156,6 @@ footer::after,
   height: 109px;
 }
 
-footer::after {
-  width: 171px;
-  height: 171px;
-}
-
-/**************************************************/
 /*****************FIN ANIMATION DES FLEURS***************/
 /***********ANIMATION AU CHARGEMENT DE LA PAGE***********/
 #primary, p {
@@ -188,7 +186,7 @@ footer::after {
   background-image: url("../assets/cloud_orange.png");
   background-size: contain;
   background-repeat: no-repeat;
-  margin-left: 4%;
+  margin-left: 5%;
 }
 #oscar .right {
   width: 20%;
@@ -201,7 +199,7 @@ footer::after {
   position: relative;
   width: 171px;
   height: 171px;
-  left: 8em;
+  left: 7em;
   top: -5em;
 }
 #oscar::after {
@@ -214,12 +212,13 @@ footer::after {
 }
 
 .orange-cloud {
-  padding: 20px 25px 0 60px;
+  padding: 1.4vw 0 0 4vw;
   margin-bottom: 0;
   color: #ffffff;
-  font: 700 clamp(16px, 3vw, 42px) "Quicksand";
+  font: 700 clamp(23px, 2.8vw, 42px) "Quicksand";
   line-height: 100%;
   letter-spacing: -2%;
+  white-space: nowrap;
 }
 
 .site-footer::before,
@@ -405,7 +404,7 @@ a.anchor-link:hover { /*Au survol*/
 
 .banner-footer { /*position du texte en bas de la banner*/
   text-align: center;
-  margin-top: 11vh;
+  margin-top: 10vh;
 }
 .banner-footer a { /*Mise en forme du lien*/
   text-decoration: none;
@@ -553,10 +552,32 @@ a[href="#studio"]::after {
     justify-content: center;
     height: 80px;
   }
+  #story,
+  #characters {
+    padding-top: 2vw;
+  }
 }
 @media (max-width: 500px) {
   .banner-menu li a.anchor-link {
     font-size: clamp(15px, 4em, 45px);
+  }
+  #oscar {
+    height: auto;
+  }
+  #oscar .left {
+    width: 90%;
+    min-width: 200px;
+    text-align: center;
+  }
+  #oscar .left p.orange-cloud {
+    font-size: clamp(10px, 2em, 20px);
+    padding: 0;
+    margin-top: 1.5vw;
+  }
+}
+@media (max-width: 400px) {
+  #oscar .left p.orange-cloud {
+    font-size: 4vw;
   }
 }
 @media screen and (orientation: landscape) and (max-width: 1200px) {
