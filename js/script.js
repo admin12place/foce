@@ -27,8 +27,8 @@ document.addEventListener('scroll', () => {
     const bannerMerge = (bannerDim - bannerLogo.height) / 1.33;
     const vertScroll = window.scrollY;
 
-    const progress = Math.min(vertScroll / bannerDim, 1);
-    const moveY = Math.min(progress * (bannerDim / 2), bannerMerge);
+    const progress = Math.min(vertScroll / bannerDim, 1);//limite le coefficient de progression à 1
+    const moveY = Math.min(progress * (bannerDim / 2), bannerMerge);//limite la progression du logo
 
     bannerLogo.style.transform = `translateY(${moveY}px)`;
 });
@@ -39,7 +39,7 @@ const movingCloud = document.querySelector('img.clouds');
 window.addEventListener('scroll', () => {
     
     const position = movingCloud.getBoundingClientRect().top;
-    const hauteurEcran = window.innerHeight - movingCloud.height;
+    const hauteurEcran = window.innerHeight - movingCloud.height;//demarre le scroll après apparition complète
 
     // Quand l'élément entre dans l'écran
     if (position < hauteurEcran) {

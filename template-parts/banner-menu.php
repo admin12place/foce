@@ -1,7 +1,7 @@
 <div class="stretch-banner">
     <div>
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-            <img src="<?php echo get_theme_file_uri() . '/assets/logo-stretch-banner.png'; ?> " alt="logo Fleurs d'oranger & chats errants"/>
+            <img src="<?php echo get_theme_file_uri() . '/assets/logo-stretch-banner.png'; ?>" alt="logo Fleurs d'oranger & chats errants"/>
         </a>
     </div>
 
