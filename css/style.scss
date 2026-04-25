@@ -129,7 +129,7 @@ main {
     aspect-ratio: 1440 / 699;
         img.clouds {
             position: absolute;
-            left: 50vw;
+            right: 5vw;
             bottom: 20vw;
             width: clamp(310px, 49.3vw, 620px);
             transform: translateX(0);
