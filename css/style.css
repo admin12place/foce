@@ -353,7 +353,6 @@ h2 span.uptitle.apparition, h3 span.uptitle.apparition {
   border-radius: 3px;
   transition: 0.3s ease;
 }
-.menu-toggle.active { /*menu burger actif, création de la croix*/ }
 .menu-toggle.active .line:nth-child(1) {
   transform: translateY(5px) rotate(45deg);
 }

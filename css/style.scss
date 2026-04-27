@@ -383,8 +383,7 @@ h2,h3 {
         border-radius:3px;
         transition:0.3s ease;
     }
-    &.active {/*menu burger actif, création de la croix*/
-        .line {
+    &.active .line {
             &:nth-child(1) {
                 transform: translateY(5px) rotate(45deg);
             }
@@ -396,7 +395,7 @@ h2,h3 {
             }
         }
     }
-}
+    
 
 .banner-menu {/*menu banner déplié, mise en forme, position et animation*/
     position: fixed;
